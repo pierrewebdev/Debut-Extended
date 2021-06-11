@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Debut",
-    "theme_author": "Shopify",
+    "theme_name": "Debut Extended",
+    "theme_author": "Pierre Web Consulting",
     "theme_version": "17.13.0",
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/using-themes\/themes-by-shopify\/debut",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_support_url": "https:\/\/pierrewebdev/#contact\/"
   },
   {
     "name": {
@@ -368,7 +368,7 @@
           "cs": "Překryvy obrázku",
           "da": "Overlejring af billeder",
           "de": "Text auf Fotos",
-          "en": "Image overlays",
+          "en": "Image overlay",
           "es": "Superposiciones de imágenes",
           "fi": "Kuvan peitto",
           "fr": "Superpositions d'images",
@@ -441,8 +441,7 @@
           "vi": "Nền",
           "zh-CN": "背景",
           "zh-TW": "背景"
-        },
-        "default": "#685858"
+        }
       },
       {
         "type": "range",
@@ -497,6 +496,38 @@
           "zh-TW": "%"
         },
         "default": 40
+      },
+      {
+        "type": "header",
+        "content": "Image Overlay Using Gradients"
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay_gradient_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay_gradient_1",
+        "label": "Color 1",
+        "default": "#568d83"
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay_gradient_2",
+        "label": "Color 2",
+        "default": "#88C8BC"
+      },
+      {
+        "type": "range",
+        "id": "image_overlay__gradient_opacity",
+        "label": "Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 60
       },
       {
         "type": "header",

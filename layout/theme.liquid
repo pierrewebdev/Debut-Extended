@@ -75,7 +75,10 @@
   </script>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
-  <link rel = "stylesheet" href = "{{ 'custom.css' | asset_url}}">
+
+  {% if settings.color_image_overlay_gradient_1 != "" or settings.color_image_overlay_gradient_2 != "" %}
+    <link rel = "stylesheet" href = "{{ 'custom.css' | asset_url}}">
+  {% endif %}
 
   <style>
     {{ header_font | font_face: font_display: 'swap' }}
@@ -199,7 +202,6 @@
    {% section 'header' %}
 
   <div class="page-container drawer-page-content" id="PageContainer">
-
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
