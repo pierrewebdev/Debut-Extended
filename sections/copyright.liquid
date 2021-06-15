@@ -1,0 +1,28 @@
+<small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ section.settings.store_name }}</small><br>
+<small><a class = "footer-link" href = "{{ section.settings.powered_by_link }}" rel = "noopener noreferrer" target = "_blank">{{ section.settings.powered_by_text }}</a></small>
+
+{% schema %}
+  {
+      "name":"Footer Copyright Text",
+      "settings": [
+        {
+            "id": "store_name",
+            "type": "text",
+            "label": "Store Or Website Name",
+            "default": "Health and Fit Store"
+        },
+        {
+            "id": "powered_by_text",
+            "type": "text",
+            "label": "Powered By Credit Credit",
+            "default": "Powered By Pierre Web Consulting"
+        },
+        {
+            "id": "powered_by_link",
+            "type": "text",
+            "label": "Powered By Link",
+            "default": "https://pierrewebdev.com"
+        }
+    ]
+  }
+{% endschema %}

@@ -199,14 +199,21 @@
     {% include 'cart-popup' %}
   {%- endif -%}
 
-   {% section 'header' %}
+  {% section 'header' %}
 
   <div class="page-container drawer-page-content" id="PageContainer">
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+    {% comment %} Code to create a nested section in footer to edit copyright text {% endcomment %}
 
-    {% section 'footer' %}
+    {% capture footer_credit %} {% section 'copyright' %} {% endcapture %}
+    {% assign footer = footer_credit | replace: 'data-shopify-editor-section', '' %}
+
+    {% capture footer_sect %} {% section 'footer' %} {% endcapture %}
+    {% assign footer_sect = footer_sect | replace: "%%insert-copyright-section%%", footer %}
+
+    {{ footer_sect }}
 
     <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
       {{- 'sections.slideshow.navigation_instructions' | t -}}

@@ -331,8 +331,7 @@
           </ul>
         {%- else -%}
           <div class="small--hide site-footer-item-align-right {% if show_selectors or show_payment_icons %}site-footer-item-center-vertically{% endif %}">
-            <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-            <small class="site-footer__copyright-content site-footer__copyright-content-powered-by">{{ powered_by_link }}</small>
+            %%insert-copyright-section%%
           </div>
         {%- endif -%}
       </div>
@@ -345,14 +344,12 @@
 
       {%- if social_icons and show_selectors -%}
         <div class="grid__item small--hide site-footer-item-align-right {% if show_payment_icons %}one-half{% endif %}">
-          <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-          <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
+          %%insert-copyright-section%%
         </div>
       {%- endif -%}
 
       <div class="grid__item small--one-whole {{ copyright_show_class }} site-footer-item-align-right">
-        <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-        <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
+        %%insert-copyright-section%%
       </div>
     </div>
   </div>
@@ -362,30 +359,8 @@
 
 {% schema %}
 {
-  "name": {
-    "cs": "Zápatí",
-    "da": "Sidefod",
-    "de": "Fußzeile",
-    "en": "Footer",
-    "es": "Pie de página",
-    "fi": "Alatunniste",
-    "fr": "Pied de page",
-    "it": "Footer",
-    "ja": "フッター",
-    "ko": "바닥글",
-    "nb": "Footer",
-    "nl": "Voettekst",
-    "pl": "Stopka",
-    "pt-BR": "Rodapé",
-    "pt-PT": "Rodapé",
-    "sv": "Sidfot",
-    "th": "ส่วนท้าย",
-    "tr": "Altbilgi",
-    "vi": "Chân trang",
-    "zh-CN": "页脚",
-    "zh-TW": "頁尾"
-  },
-  "max_blocks": 4,
+  "name": "Footer",
+  "max_blocks": 3,
   "settings": [
     {
       "type": "header",
