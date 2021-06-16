@@ -1,3 +1,10 @@
+<style>
+  .btn.newsletter__submit{
+    background:#568d83;
+    color: #FFF;
+ }
+</style>
+
 {%- assign social_icons = false -%}
 {%- assign inline_list = false -%}
 {%- assign locale_selector = false -%}
@@ -185,7 +192,7 @@
                           data-form-status
                         {% endif %}>
                       <span class="input-group__btn">
-                        <button type="submit" class="btn newsletter__submit" name="commit" >
+                        <button type="submit" class="btn newsletter__submit" name="commit" style = "background:{{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }}" >
                           <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
                         </button>
                       </span>
@@ -207,6 +214,14 @@
                       {{ block.settings.text }}
                   </div>
                 {%- endif -%}
+
+                {%- when 'contact' -%}
+                  <div class="site-footer__rte
+                              {% if section.blocks.size == 1 %} site-footer__single-block--centered{% endif %}">
+                      <p class = "h4"> {{ block.settings.contact_heading }} </p>
+                      <p> Phone Number: {{ block.settings.phone_num }} </p>
+                      <p> Email: {{ block.settings.email }} </p>
+                  </div>
 
               {%- when 'link_list' -%}
                 {%- assign footer_linklist = block.settings.menu -%}
@@ -987,6 +1002,43 @@
             "zh-CN": "新闻通讯",
             "zh-TW": "電子報"
           }
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#568d83"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#FFF"
+        }
+      ]
+    },
+    {
+      "name": "Contact Info",
+      "type": "contact",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "contact_heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Contact Us"
+        },
+        {
+          "id": "phone_num",
+          "type": "text",
+          "label": "Phone Number",
+          "default": "(917)-555-5467"
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Email",
+          "default": "johndoe@gmail.com"
         }
       ]
     }
