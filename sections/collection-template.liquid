@@ -27,13 +27,9 @@
     {% if section.settings.show_collection_image and collection.image %}
       <div class="collection-hero">
         <div class="collection-hero__image ratio-container lazyload js"
-             data-bgset="{% include 'bgset', image: collection.image %}"
-             data-sizes="auto"
-             data-parent-fit="cover"
-             data-image-loading-animation
-        ></div>
+        style='background-image: linear-gradient(to left,{{ settings.color_image_overlay_gradient_1 }}, {{ settings.color_image_overlay_gradient_2 }}); color:black;'></div>
         <noscript>
-          <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+          <div class="collection-hero__image" style='background-image: linear-gradient(to left,{{ settings.color_image_overlay_gradient_1 }}, {{ settings.color_image_overlay_gradient_2 }}); color:black;'></div>
         </noscript>
         <div class="collection-hero__title-wrapper">
           <h1 class="collection-hero__title page-width">
