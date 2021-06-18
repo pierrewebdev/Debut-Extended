@@ -3,19 +3,58 @@
     opacity: {{ settings.image_overlay__gradient_opacity }};
 }
 
+h2, h2.h2{
+    font-size: 24px;
+}
+
+h3.h3{
+    font-size: 18px;
+}
+
 .footer-link{
     color: inherit;
 }
 
-div.collection-grid-item__title{
-    position: absolute;
-    top: 95%;
-    width: 100%;
-    height: 15%;
-    padding: 0 5px !important;
-    margin: 0;
+/*CSS for image cards in collections block*/
+@media only screen and (min-width: 911px){
+    div.collection-grid-item__title{
+        position: absolute;
+        top: 95%;
+        width: 100%;
+        height: 15%;
+        padding: 0 5px !important;
+        margin: 0;
+    }
+
+    div.collection-grid-item__title.h3{
+        font-size: 20px;
+    }
 }
 
-div.collection-grid-item__title.h3{
-    font-size: 20px;
+/*Size for tablet and phone screens*/
+@media only screen and (max-width: 768px){
+    div.collection-grid-item__title.h3{
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    div.collection-grid-item__title.h3{
+        font-size: 18px;
+    }
+}
+
+/*CSS for custom content 2 column layout with image and content*/
+/*Implemented this to make it responsive on viewports smaller than 769px*/
+
+@media only screen and (max-width: 768px) {
+    div.custom-content{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    div.custom__item ,div.custom__item.custom__item--image, div.custom__item.custom__item--image div{
+        max-width: 100%;
+        width: 85%;
+    }
 }
